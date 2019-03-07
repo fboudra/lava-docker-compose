@@ -22,6 +22,8 @@ services:
   server:
     image: lpe12proto/lava-server:alpine
     container_name: lava_server
+    environment:
+      SERVICES: "apache2 lava-logs lava-master lava-publisher gunicorn"
     ports:
       - 80:80
     volumes:

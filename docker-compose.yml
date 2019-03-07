@@ -38,7 +38,7 @@ services:
       - ./server-overlay/etc/lava-server/env.yaml:/etc/lava-server/env.yaml
 
       # provisioning script to add users and boards
-      - ./server-overlay/root/provision.sh:/root/provision.sh
+      # - ./server-overlay/root/provision.sh:/root/entrypoint.d/provision.sh
 
     depends_on:
       - database

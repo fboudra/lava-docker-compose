@@ -20,7 +20,7 @@ services:
       - 3128:3128
 
   server:
-    image: lpe12proto/lava-server:alpine
+    image: ${DC_SERVER_IMAGE}
     container_name: lava_server
     environment:
       SERVICES: "apache2 lava-logs lava-master lava-publisher gunicorn"
@@ -44,7 +44,7 @@ services:
       - database
 
   dispatcher:
-    image: lpe12proto/lava-dispatcher:alpine
+    image: ${DC_DISPATCHER_IMAGE}
     container_name: lava_dispatcher
     devices:
       - /dev/kvm # needed for QEMU
